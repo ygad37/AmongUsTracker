@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title>
+Among Us Tracker
+</title>
+
+<style>
+	.about
+	{
+	position: absolute;
+      	top: 300px;
+      	left: 5px;
+	}
+</style>
+</head>
+
+
+<body style="background-color:grey;">
+
+<script type="text/javascript">
+	function flip(id){
+		var neutral = "images/"+id+".png";
+		var good = "images/"+id+"-good.png";
+		var bad  = "images/"+id+"-bad.png";
+		var dead = "images/"+id+"-dead.png";
+
+		var getState = document.getElementById(id).src;
+
+		if(getState.includes(neutral)){
+		document.getElementById(id).src = good;}
+		
+		else if(getState.includes(good)){
+		document.getElementById(id).src = bad;}
+
+		else if(getState.includes(bad)){
+		document.getElementById(id).src = dead;}
+
+		else{document.getElementById(id).src = neutral;}
+		//YG
+		}
+
+</script>
+
+<script type="text/javascript">
+	function reset(){
+
+		var id;
+		for (id = 1; id < 13; id++) {
+  		var neutral = "images/"+id+".png";
+		document.getElementById(id).src = neutral;
+		}
+
+		}
+
+</script>
+
+<script type="text/javascript">
+	function display(){
+		var getState = document.getElementById("aboutDisplay").src;
+		var hidden = "images/empty.png";
+		var displayed = "images/aboutDisplay.png";
+
+		if(getState.includes(hidden)){
+		document.getElementById("aboutDisplay").src = displayed;}
+		
+		else if(getState.includes(displayed)){
+		document.getElementById("aboutDisplay").src = hidden;}
+		}
+	
+
+</script>
+
+
+	<h1>
+	Track who's good or who's suspicious.
+	</h1>
+	<h2>
+	Click on a character to change its background.
+	</h2>
+		
+	<p>
+	<img src="images/1.png" id="1" onclick="flip(1)" />
+	  
+	<img src="images/2.png" id="2" onclick="flip(2)" />
+	  
+	<img src="images/3.png" id="3" onclick="flip(3)" />
+	</p>
+
+	<p>
+	<img src="images/4.png" id="4" onclick="flip(4)" />
+	  
+	<img src="images/5.png" id="5" onclick="flip(5)" />
+	  
+	<img src="images/6.png" id="6" onclick="flip(6)" />
+	</p>
+
+	<p>
+	<img src="images/7.png" id="7" onclick="flip(7)" />
+	  
+	<img src="images/8.png" id="8" onclick="flip(8)" />
+	  
+	<img src="images/9.png" id="9" onclick="flip(9)" />
+	</p>
+
+
+	<p>
+	<img src="images/10.png" id="10" onclick="flip(10)" />
+	  
+	<img src="images/11.png" id="11" onclick="flip(11)" />
+	  
+	<img src="images/12.png" id="12" onclick="flip(12)" />
+	</p>
+
+	<p>
+	<img src="images/reset.png" id="reset" onclick="reset()" />
+	<img src="images/about.png" id="about" onclick="display()" />
+	</p>
+	<p>
+	<img src="images/empty.png" id="aboutDisplay" class="about" />
+	</p>
+	
+</body>
